@@ -1,0 +1,9 @@
+@keyframes slidein {
+  from {
+    transform:translate3d(0,1000px,0);
+  }
+
+  to {
+    transform:translate3d(0,0,0);
+  }
+}

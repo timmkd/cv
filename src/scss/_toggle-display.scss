@@ -1,0 +1,25 @@
+.toggle-display {
+	position:absolute;
+	right:0;
+	top:0;
+	li{
+		display: inline-block;
+	}
+
+	button {
+		font-size: $font-size-h3;
+		cursor:pointer;
+		color:$color-body-text;
+		background: rgba($color-body-text, .2);
+		border:0;
+		margin-left:$padding-base / 2;
+
+		&.active {
+			background:rgba($color-body-text, .4);
+		}
+	}
+
+	&--text {
+		display: none;
+	}
+}

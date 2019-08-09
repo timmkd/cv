@@ -1,0 +1,39 @@
+html{
+	font-size:$base-font-size * 0.8;
+
+	@media(min-width:$tablet){
+		font-size:$base-font-size;
+	}
+}
+
+body{
+	background:$color-body-bg;
+	color:$color-body-text;
+	font-family:$font-base;
+	font-weight:200;
+	line-height:1.4;
+	padding:0 $padding-base;
+}
+
+.container {
+	max-width: $container-max;
+	margin:0 auto;
+	position:relative;
+
+	@media(min-width:$wide){
+		max-width: $container-max-wide;
+	}
+}
+
+a {
+	color:$color-primary;
+
+	&:hover {
+		color:$color-secondary;
+	}
+}
+
+main {
+	overflow:hidden;
+	padding-top:5px;
+}

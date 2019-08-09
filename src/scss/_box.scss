@@ -1,0 +1,35 @@
+.boxes{
+	margin: 0 -3.25% ($padding-base * 2);
+
+	@media(min-width:$tablet){
+		margin: 0 -2.25% ($padding-base * 2);
+	}
+
+}
+
+.box {
+	display:inline-block;
+	position:relative;
+	cursor:pointer;
+	width:33.33%;
+
+	@media(min-width:$tablet){
+		width:20%;
+	}
+
+	&:before {
+		display:block;
+		content:" ";
+		margin-top:100%;
+		background:red;
+	}
+
+	img {
+		display: block;
+		position:absolute;
+		top:50%;
+		left:50%;
+		width:75%;
+		transform:translate3d(-50%,-50%,0);
+	}
+}

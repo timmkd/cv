@@ -1,0 +1,79 @@
+.jobs {
+	position:relative;
+	overflow:hidden;
+
+	/*hide and show according to page display toggle*/
+	main & {
+		display:block;
+		transform: translate3d(-101vw,0,0);
+		transition:transform .5s, height 0s;
+		transition-delay:0, 1s;
+		height:0;
+		overflow: visible;
+	}
+
+	.active-display--list main & {
+		transform: translate3d(0,0,0);
+		height:auto;
+	}
+}
+
+.job {
+	clear:both;
+	margin-bottom:$padding-base * 1.5;
+	overflow: hidden;
+	transition:all .3s;
+
+	&.hide{
+		max-height: 0;
+		margin:0;
+	}
+	&.show {
+		max-height: 1000px;
+	}
+
+	img{
+		max-width: 45%;
+		overflow:hidden;
+		margin: 0 auto $padding-base / 2;
+		display: block;
+
+		@media(min-width:$narrow){
+			float:left;
+			width:120px;
+			margin-right:20px;
+		}
+	}
+	&--text {
+		overflow:hidden;
+	}
+	&--date{
+		font-style: italic;
+	}
+	&--descrip {
+		margin-bottom:$padding-base / 3;
+	}
+
+	.skills {
+		&:before{
+			content: "Skillsets:";
+			font-weight: 400;
+			margin-right: 10px;
+		}
+		ul {
+			display: inline;
+		}
+	}
+	.skill{
+		margin-right: 3px;
+		div{
+			display: inline;
+		}
+		&:after{
+			content:",";
+		}
+		&:last-child:after{
+			content:"";
+		}
+	}
+}

@@ -1,0 +1,44 @@
+/*breakpoints*/
+$narrow:460px;
+$tablet:768px;
+$desktop:1024px;
+$wide:1224px;
+
+/*structure*/
+$container-max: 900px;
+$container-max-wide: 1000px;
+
+/*colour*/
+$color-primary:#3ad2a2;
+$color-secondary:#156d51;
+
+$color-body-bg:#fff;
+$color-body-text:#666;
+
+$color-header-bg: $color-primary;
+$color-header-text:#fff;
+
+$color-footer-bg: #ccc;
+
+$color-filters-bg: $color-primary;
+$color-filters-text:#fff;
+
+$color-overlay-bg:#fff;
+
+/*fonts*/
+$font-base:'Overpass', sans-serif;
+
+/*font-sizes*/
+$base-font-size:16px;
+$font-size-base:1rem;
+
+$font-size-h1:2rem;
+$font-size-h2:1.5rem;
+$font-size-h3:1.25rem;
+$font-size-h4:1.2rem;
+$font-size-h5:1.1rem;
+$font-size-small:.9rem;
+$font-size-smaller:.8rem;
+
+/*padding*/
+$padding-base:30px;

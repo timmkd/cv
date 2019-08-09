@@ -1,0 +1,95 @@
+.overlay {
+	@media(max-width:($tablet - 1)){
+		&--wrapper {
+			display:none;
+			background:#fff;
+			position:fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			padding:$padding-base;
+			overflow-y: scroll;
+
+			.overlay--show &{
+				display: block;
+			}
+		}
+
+		&--close {
+			font-size:30px;
+			padding-bottom:$padding-base;
+			position:fixed;
+			right:$padding-base / 2;
+			top:$padding-base / 2;
+			z-index: 1;
+		}
+	}
+
+	@media(min-width:$tablet){
+		background:$color-overlay-bg;
+		position:fixed;
+		width:75%;
+		left:50%;
+		top:50%;
+		transform:translate3d(-50%, -50%, 0);
+		padding:($padding-base * 2) ($padding-base * 2) $padding-base;
+		max-width:600px;
+		overflow-y: scroll;
+
+		&--show {
+			overflow:hidden;
+		}
+
+		&--wrapper {
+			position:fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			background:rgba($color-primary, .4);
+			pointer-events: none;
+			opacity: 0;
+			transition:opacity .5s;
+
+			.overlay--show  & {
+				pointer-events:auto;
+				opacity:1;
+			}
+		}
+
+		&--behind {
+			position:fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+		}
+
+		&--outside{
+			transition:filter .5s;
+			transform: translateZ(0);
+
+			.overlay--show &{
+				filter:blur(10px);
+			}
+		}
+
+		&--inner {
+			max-height:70vh;
+			overflow-y: scroll;
+		}
+
+		&--close {
+			position:absolute;
+			top:$padding-base / 2;
+			right:$padding-base / 2;
+			font-size:30px;
+			cursor:pointer;
+		}
+	}
+
+	.job.show {
+		max-height: none;
+	}
+}

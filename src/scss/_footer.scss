@@ -1,0 +1,13 @@
+.footer {
+	@include full-width-el();
+	background:$color-footer-bg;
+	padding:$padding-base;
+
+	.social-icons{
+		margin-bottom:0;
+
+		&--icon {
+			color:inherit;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.header{
+	@include full-width-el();
+	background:$color-header-bg;
+	color:$color-header-text;
+	padding: $padding-base;
+
+	@media(min-width:$desktop){
+		padding:10vh $padding-base $padding-base;
+	}
+
+	a {
+		color:white;
+		text-decoration: none;
+		border-bottom:1px solid white;
+
+		&:hover {
+			color:$color-secondary;
+		}
+	}
+
+	.social-icons--icon {
+		color:white;
+	}
+
+}

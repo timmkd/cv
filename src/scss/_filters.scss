@@ -1,0 +1,32 @@
+.filters{
+	@include full-width-el();
+	background:$color-filters-bg;
+	color:$color-filters-text;
+	padding: 0 $padding-base $padding-base;
+	margin-bottom:$padding-base * 2;
+
+	a {
+		color:white;
+		text-decoration: none;
+		border-bottom:1px solid white;
+
+		&:hover {
+			color:$color-secondary;
+		}
+	}
+
+	.skill {
+		padding:3px 1px 1px;
+		font-size:$font-size-h5;
+		border-bottom:1px solid white;
+		cursor:pointer;
+
+		&:hover,
+		strong {
+			font-weight: 400;
+			color:$color-secondary;
+			border-bottom-color:$color-secondary;
+		}
+	}
+
+}

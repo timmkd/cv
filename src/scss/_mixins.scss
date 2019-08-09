@@ -1,0 +1,6 @@
+@mixin full-width-el ($padding:$padding-base){
+	width:100vw;
+	margin-left:-$padding;
+	margin-right:-$padding;
+	box-sizing:border-box;
+}

@@ -1,0 +1,30 @@
+.social-icons {
+	margin:0 0 $padding-base * 1.5;
+	padding:0;
+
+	li{
+		margin:0;
+		padding:0;
+		display: inline-block;
+	}
+
+	a {
+		border-bottom: 0;
+	}
+
+	&--icon {
+		text-decoration: none;
+		font-size: $font-size-h2;
+
+		& > span {
+			display:none;
+		}
+	}
+
+	.icon-mobile {
+		margin-left:$padding-base;
+		&:before {
+			margin:0;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+.searchbar {
+	border:3px solid #fff;
+	background: rgba(255,255,255,.1);
+	padding:$padding-base / 2;
+	font-size:$font-size-h2;
+	color:#fff;
+    box-sizing: border-box;
+    border-width: 4px;
+    width: 100%;
+    height: 4rem;
+    margin-bottom:$padding-base;
+
+    @media(min-width:$tablet){
+    width: 50vw;
+    }
+
+	&:focus {
+		outline:none;
+		border-width:6px;
+		background: rgba(255,255,255,.2);
+	}
+
+	&::-webkit-input-placeholder{
+		color:rgba(255,255,255,.8);
+	}
+	&::-moz-placeholder { /* Firefox 19+ */
+		color:rgba(255,255,255,.8);
+	}
+	&:-ms-input-placeholder { /* IE 10+ */
+		color:rgba(255,255,255,.8);
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+		color:rgba(255,255,255,.8);
+	}
+}
