@@ -1,4 +1,6 @@
 .slider {
+	margin-bottom: 30px;
+
 	&--slides-wrapper {
 		display:block;
 		width:calc(100vw - #{$padding-base * 2});
@@ -21,6 +23,7 @@
 		float:left;
 		width:calc(100vw - #{$padding-base * 2});
 		max-width: $container-max;
+		min-height: 20px;
 
 		@media(min-width:$wide){
 			max-width: $container-max-wide;

@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import {Job} from './Job';
+import Job from './Job';
 
-export class Jobs extends Component {
+class Jobs extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -17,11 +18,7 @@ export class Jobs extends Component {
 	}
 
 	render() {
-		let rows = [];
-		this.props.jobs.map(job => {
-			rows.push(<Job key={job.key} job={job} search={this.props.search}/>);
-			return true;
-		});
+		const rows = this.props.jobs.map(job => <Job key={job.key} job={job}/>);
 		return (
 			<div id="job-format-list" className="jobs">
 				<div>
@@ -31,6 +28,14 @@ export class Jobs extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => (
+	{
+		search: state.keywords,
+	}
+);
+
+export default connect(mapStateToProps)(Jobs);
 
 Jobs.propTypes = {
 	jobs: PropTypes.array,

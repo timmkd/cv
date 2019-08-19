@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Jobs} from './jobs';
+import Jobs from './Jobs';
 
 export class Overlay extends Component {
 	constructor() {

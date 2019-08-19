@@ -1,21 +1,20 @@
-import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import {Header} from './Header';
-import {Jobs} from './jobs';
+import Jobs from './Jobs';
 import {Skills} from './Skills';
 import {SearchBar} from './Searchbar';
 import {Boxes} from './Boxes';
 import {Footer} from './Footer';
 import {Overlay} from './Overlay';
-import {Slider} from './Slider';
-import axios from 'axios';
-import jobsData from './jobs.json' 
+import Slider from './Slider';
+import { setKeywords } from './actions';
 
-export class Main extends Component {
+class Main extends Component {
 	constructor() {
 		super();
 		this.state = {
 			activeDisplay: 'list',
-			jobs: jobsData,
 			filteredJobs: [],
 			filter: '',
 			skills: [],
@@ -38,7 +37,7 @@ export class Main extends Component {
 		// 	.get('app/jobs.json')
 		// 	.then(response => {
 		// 		this.setState({jobs: response.data});
-				this.getSkills(this.state.jobs);
+				this.getSkills(this.props.jobs);
 				this.updateFilteredJobs();
 		// 	});
 	}
@@ -59,7 +58,7 @@ export class Main extends Component {
 
 	updateFilteredJobs(filter) {
 		let rows = [];
-		this.state.jobs.map(job => {
+		this.props.jobs.map(job => {
 			job.hide = 'show';
 			if (filter && !this.jobMatch(job, filter)) {
 				job.hide = 'hide';
@@ -85,8 +84,9 @@ export class Main extends Component {
 	}
 
 	handleSearch(filter) {
-		this.setState({filter});
+		this.setState({ filter });
 		this.updateFilteredJobs(filter);
+		this.props.setKeywords(filter);
 	}
 
 	handleToggleDisplay(activeDisplay) {
@@ -147,3 +147,15 @@ export class Main extends Component {
 		);
 	}
 }
+
+const mapDispatchToProps = {
+  setKeywords,
+};
+
+const mapStateToProps = state => (
+	{
+		jobs: state.jobs,
+	}
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

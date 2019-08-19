@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {Skills} from './Skills';
 import {Searchable} from './Searchable';
 
-export class Job extends Component {
+class Job extends Component {
 	render() {
 		const className = 'job ' + this.props.job.hide;
 		return (
@@ -21,6 +22,14 @@ export class Job extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => (
+	{
+		search: state.keywords,
+	}
+);
+
+export default connect(mapStateToProps)(Job);
 
 Job.propTypes = {
 	job: PropTypes.object.isRequired,
