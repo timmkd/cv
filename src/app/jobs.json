@@ -42,7 +42,7 @@
 		"title": "Tim McDonald - Online CV",
 		"logo": "img/cv.png",
 		"dates": "",
-		"text": "This website is built using react.js. You can view the source code on <a href='https://github.com/timmkd/reactportfolio'>github</a>. Filter results using the search box above, or view the jobs as icons by clicking the icon button above. Click on each icon to view more information about the related job. Also, try inspecting the code and components in a chrome inspector.",
+		"text": "This website is built using react.js. You can view the source code on <a href='https://github.com/timmkd/cv'>github</a>. Filter results using the search box above, or view the jobs as icons by clicking the icon button above. Click on each icon to view more information about the related job. Also, try inspecting the code and components in a chrome inspector.",
 		"skills": ["html", "CSS", "javascript", "react", "json", "Sass", "GIT", "Responsive", "yeoman"]
 	},
 	{
